@@ -1,10 +1,19 @@
 import React from 'react'
 
-import { ExampleComponent } from 'timepicker'
+import { TimePicker } from 'timepicker'
 import 'timepicker/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const handleTimeChanged= (time) => {
+    console.log('time = ', time)
+  }
+  return <div style={{width: '400px'}}>
+     <TimePicker 
+      placeHolder='set time'
+      label = 'time'
+      tweleveHours 
+     onTimeChanged={handleTimeChanged} />
+  </div> 
 }
 
 export default App
